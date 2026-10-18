@@ -47,11 +47,16 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   statusText.textContent = '';
 
-  if (validateForm()) {
-    console.log('Form submitted successfully!');
-    statusText.textContent = 'Thanks, your message was sent.';
-    form.reset();
-  }
+     if (validateForm()) {
+     console.log('Form submitted successfully!');
+     console.log({
+       name: nameInput.value.trim(),
+       email: emailInput.value.trim(),
+       message: messageInput.value.trim()
+     });
+     statusText.textContent = 'Thanks, your message was sent.';
+     form.reset();
+      }
 });
 
 // Remove the error as soon as the person starts correcting the field
